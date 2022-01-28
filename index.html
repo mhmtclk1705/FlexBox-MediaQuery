@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox & Media Query</title>
+    <style>
+      /* * {
+        box-sizing: border-box;
+        margin: 5px;
+      } */
+
+      .header {
+        /* width: 100%; */
+        height: 40px;
+        background-color: gray;
+      }
+      .header ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+      }
+      .header li {
+        list-style: none;
+        margin-right: 20px;
+        margin-top: 14px;
+      }
+      .header a {
+        text-decoration: none;
+        color: rgb(245, 245, 220, 1);
+      }
+      .header a:hover {
+        text-decoration: underline;
+        background-color: bisque;
+        color: red;
+      }
+      .content {
+        border: 15px solid blue;
+        background-color: green;
+        width: auto;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px 100px;
+      }
+
+      @media screen and (max-width: 992px) {
+        body {
+          background-color: #bac16b;
+        }
+        .header a:hover {
+          background-color: cyan;
+          color: black;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        body {
+          background-color: #ff8300;
+        }
+        .header ul {
+          justify-content: space-around;
+        }
+        .header a {
+          color: black;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        body {
+          background-color: #a700e1;
+        }
+        .content {
+          border: 10px solid red;
+          background-color: #a700e1;
+          height: 100px;
+        }
+        .header {
+          background-color: rgba(0, 0, 0, 0);
+          margin-bottom: 200px;
+        }
+        .header ul {
+          flex-direction: column;
+          height: auto;
+          text-align: center;
+          background-color: aqua;
+        }
+
+        h2 {
+          visibility: hidden;
+          line-height: 0;
+        }
+        h2::before {
+          content: "Did you realize,you made a magic!";
+          visibility: visible;
+          font-size: 16px;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html">About</a></li>
+          <li><a href="index.html">Products</a></li>
+          <li><a href="index.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="content"><h2>First make me smaller, then lost me!</h2></div>
+    </div>
+  </body>
+</html>
